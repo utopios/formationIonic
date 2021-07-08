@@ -11,8 +11,21 @@ import { Component } from '@angular/core';
 export class AppComponent {
   firstName:String
   lastName:String
+  //tableau de string
+  listeString:Array<String>
+  listeObject:Array<any>
   constructor() {
     this.firstName = "abadi"
     this.lastName = "ihab"
+    this.listeString = ["titi","tata","toto", "minet"]
+    this.listeObject =[
+      {name : 'toto', id:1},
+      {name : 'titi', id:2},
+      {name : 'minet', id:3},
+    ] 
+  }
+
+  addElement() {
+    this.listeString.push("new element")
   }
 }
