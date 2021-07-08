@@ -4,10 +4,13 @@
 <div>
  <input type="number" [(ngModel)]="age" /> Age : {{age}} <button (click)="incrementAge()">Increment age</button>
 </div> -->
-<div>
+<button (click)="switchFormulaire()">Switch formulaire</button>
+<div *ngIf="displayForm; else elseForm">
   <div><input [(ngModel)]="firstName" placeholder="Your FirstName" /></div>
   <div><input [(ngModel)]="lastName" placeholder="Your LastName" /></div>
   <div><input [(ngModel)]="email" placeholder="Your Email" /></div>
   <div><button (click)="confirmAllInformation()">Confirm</button></div>
-  <div>Information : {{allInformation}}</div>
 </div>
+<ng-template #elseForm>
+  <div>Information : {{allInformation}}</div>
+</ng-template>
