@@ -8,6 +8,8 @@ import { Component, Input, OnInit } from '@angular/core';
 export class PersonComponent{
   @Input()firstName:String
   @Input()lastName:String
+  @Input() email:String
+  allInformation:String
   age:number
   constructor() { 
     this.age = 0
@@ -15,6 +17,10 @@ export class PersonComponent{
 
   incrementAge() {
     this.age++
+  }
+
+  confirmAllInformation() {
+    this.allInformation = `${this.firstName} ${this.lastName} ${this.age} ${this.email}`
   }
 
 }
