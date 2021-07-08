@@ -1,0 +1,14 @@
+<ion-grid>
+  <ion-row>
+    <ion-col>
+      Nom
+    </ion-col>
+    <ion-col>
+      Prénom
+    </ion-col>
+    <ion-col>
+      Email
+    </ion-col>
+  </ion-row>
+  <app-item-person *ngFor="let person of listPersons" [person]="person"></app-item-person>
+</ion-grid>

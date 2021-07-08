@@ -1,0 +1,14 @@
+<form (ngSubmit)="confirmForm()">
+  <div>
+    <input [(ngModel)]="firstName" name="firstName" placeholder="Votre prénom">
+  </div>
+  <div>
+    <input [(ngModel)]="lastName" name="lastName" placeholder="Votre nom">
+  </div>
+  <div>
+    <input [(ngModel)]="email" name="email" placeholder="Votre email">
+  </div>
+  <div>
+    <button type="submit">Valider</button>
+  </div>
+</form>

@@ -5,30 +5,34 @@
  <input type="number" [(ngModel)]="age" /> Age : {{age}} <button (click)="incrementAge()">Increment age</button>
 </div> -->
 <!-- Composant Menu => MenuPerson -->
-<button (click)="switchFormulaire(true)">Switch formulaire</button>
-<button (click)="switchFormulaire(false)">Switch list</button>
+<!-- <button (click)="switchFormulaire(true)">Switch formulaire</button>
+<button (click)="switchFormulaire(false)">Switch list</button> -->
 <!-- Composant formulaire FromPerson -->
-<div *ngIf="displayForm; else elseForm">
+<!-- <div *ngIf="displayForm; else elseForm">
   <div><input [(ngModel)]="firstName" placeholder="Your FirstName" /></div>
   <div><input [(ngModel)]="lastName" placeholder="Your LastName" /></div>
   <div><input [(ngModel)]="email" placeholder="Your Email" /></div>
   <div><button (click)="confirmAllInformation()">Confirm</button></div>
-</div>
+</div> -->
 <!-- composant list => ListPeron -->
-<ng-template #elseForm>
+<!-- <ng-template #elseForm>
   <div>Information : {{allInformation}}</div>
   <ion-grid>
     <ion-row>
       <ion-col>Nom</ion-col>
       <ion-col>Prénom</ion-col>
       <ion-col>Email</ion-col>
-    </ion-row>
+    </ion-row> -->
     <!-- composant element => ItemPerson -->
-    <ion-row *ngFor="let p of listPersons">
+    <!-- <ion-row *ngFor="let p of listPersons">
         <ion-col>{{p.firstName}}</ion-col>
         <ion-col>{{p.firstName}}</ion-col>
         <ion-col>{{p.email}}</ion-col>
     </ion-row>
   </ion-grid>
  
-</ng-template>
+</ng-template> -->
+
+<app-menu-person (eventMenuChange)="changeMenu($event)"></app-menu-person>
+<app-form-person *ngIf="menu == 'form'" (validPerson)="addPerson($event)"></app-form-person>
+<app-list-person *ngIf="menu == 'liste'" [listPersons]="listPersons"></app-list-person>

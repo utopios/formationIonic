@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Person } from '../interfaces/person.interface';
 
 @Component({
   selector: 'app-person',
@@ -6,14 +7,17 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./person.component.scss'],
 })
 export class PersonComponent{
-  @Input()firstName:String
-  @Input()lastName:String
-  @Input() email:String
-  displayForm:Boolean
-  allInformation:String
-  listPersons : Array<any>
+  // @Input()firstName:String
+  // @Input()lastName:String
+  // @Input() email:String
+  // displayForm:Boolean
+  // allInformation:String
+  // listPersons : Array<any>
+
+  menu:String
+  listPersons : Array<Person>
   constructor() { 
-    this.displayForm = false
+    // this.displayForm = false
     this.listPersons = []
   }
 
@@ -21,21 +25,29 @@ export class PersonComponent{
   //   this.age++
   // }
 
-  confirmAllInformation() {
-    this.allInformation = `${this.firstName} ${this.lastName} ${this.email}`
-    this.listPersons.push({
-      'firstName' : this.firstName,
-      'lastName': this.lastName,
-      'email': this.email
-    })
-    this.displayForm = false
-    this.firstName = ""
-    this.lastName = ""
-    this.email = ""
+  // confirmAllInformation() {
+  //   this.allInformation = `${this.firstName} ${this.lastName} ${this.email}`
+  //   this.listPersons.push({
+  //     'firstName' : this.firstName,
+  //     'lastName': this.lastName,
+  //     'email': this.email
+  //   })
+  //   this.displayForm = false
+  //   this.firstName = ""
+  //   this.lastName = ""
+  //   this.email = ""
+  // }
+
+  // switchFormulaire(isForm : boolean) {
+  //   this.displayForm = isForm
+  // }
+
+  changeMenu(val) {
+    console.log(val)
+    this.menu = val
   }
 
-  switchFormulaire(isForm : boolean) {
-    this.displayForm = isForm
+  addPerson(person:Person) {
+    this.listPersons.push(person)
   }
-
 }
