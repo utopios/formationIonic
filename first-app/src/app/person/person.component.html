@@ -35,4 +35,5 @@
 
 <app-menu-person (eventMenuChange)="changeMenu($event)"></app-menu-person>
 <app-form-person *ngIf="menu == 'form'" (validPerson)="addPerson($event)"></app-form-person>
-<app-list-person *ngIf="menu == 'liste'" [listPersons]="listPersons"></app-list-person>
+<!-- <app-list-person *ngIf="menu == 'liste'" [listPersons]="listPersons"></app-list-person> -->
+<app-list-person *ngIf="menu == 'liste'" ></app-list-person>
