@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Person } from '../interfaces/person.interface';
+import { PersonService } from '../services/person.service';
 
 @Component({
   selector: 'app-person',
@@ -16,9 +17,10 @@ export class PersonComponent{
 
   menu:String
   listPersons : Array<Person>
-  constructor() { 
+  //On injecte un objet de type PersonService dans notre composant
+  constructor(private personService:PersonService) { 
     // this.displayForm = false
-    this.listPersons = []
+    this.listPersons = this.personService.persons
   }
 
   // incrementAge() {

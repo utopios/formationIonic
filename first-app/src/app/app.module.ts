@@ -15,6 +15,7 @@ import { ItemPersonComponent } from './item-person/item-person.component';
 import { ListPersonComponent } from './list-person/list-person.component';
 import { MenuPersonComponent } from './menu-person/menu-person.component';
 import { PersonComponent } from './person/person.component';
+import { PersonService } from './services/person.service';
 
 
 //Une fonction qui permet de déclarer une classe comme un module angular, cette fonction prend comme params un objet
@@ -26,7 +27,7 @@ import { PersonComponent } from './person/person.component';
   //On importe les sous modules
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, FormsModule],
   //On indique les services du modules
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, PersonService],
   //Le composant principal du module
   bootstrap: [AppComponent],
 })
