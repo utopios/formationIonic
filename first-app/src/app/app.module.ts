@@ -7,6 +7,9 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ComposantAComponent } from './composant-a/composant-a.component';
+import { ComposantBComponent } from './composant-b/composant-b.component';
+import { ComposantCComponent } from './composant-c/composant-c.component';
 import { PersonComponent } from './person/person.component';
 
 
@@ -14,7 +17,7 @@ import { PersonComponent } from './person/person.component';
 //params => la configuration du module
 @NgModule({
   //On déclare les composants du modules
-  declarations: [AppComponent, PersonComponent],
+  declarations: [AppComponent, PersonComponent, ComposantAComponent, ComposantBComponent, ComposantCComponent],
   entryComponents: [],
   //On importe les sous modules
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, FormsModule],
