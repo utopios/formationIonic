@@ -4,7 +4,8 @@
 <div>
  <input type="number" [(ngModel)]="age" /> Age : {{age}} <button (click)="incrementAge()">Increment age</button>
 </div> -->
-<button (click)="switchFormulaire()">Switch formulaire</button>
+<button (click)="switchFormulaire(true)">Switch formulaire</button>
+<button (click)="switchFormulaire(false)">Switch list</button>
 <div *ngIf="displayForm; else elseForm">
   <div><input [(ngModel)]="firstName" placeholder="Your FirstName" /></div>
   <div><input [(ngModel)]="lastName" placeholder="Your LastName" /></div>
@@ -13,4 +14,17 @@
 </div>
 <ng-template #elseForm>
   <div>Information : {{allInformation}}</div>
+  <ion-grid>
+    <ion-row>
+      <ion-col>Nom</ion-col>
+      <ion-col>Prénom</ion-col>
+      <ion-col>Email</ion-col>
+    </ion-row>
+    <ion-row *ngFor="let p of listPersons">
+        <ion-col>{{p.firstName}}</ion-col>
+        <ion-col>{{p.firstName}}</ion-col>
+        <ion-col>{{p.email}}</ion-col>
+    </ion-row>
+  </ion-grid>
+ 
 </ng-template>

@@ -11,22 +11,31 @@ export class PersonComponent{
   @Input() email:String
   displayForm:Boolean
   allInformation:String
-  age:number
+  listPersons : Array<any>
   constructor() { 
-    this.age = 0
     this.displayForm = false
+    this.listPersons = []
   }
 
-  incrementAge() {
-    this.age++
-  }
+  // incrementAge() {
+  //   this.age++
+  // }
 
   confirmAllInformation() {
-    this.allInformation = `${this.firstName} ${this.lastName} ${this.age} ${this.email}`
+    this.allInformation = `${this.firstName} ${this.lastName} ${this.email}`
+    this.listPersons.push({
+      'firstName' : this.firstName,
+      'lastName': this.lastName,
+      'email': this.email
+    })
+    this.displayForm = false
+    this.firstName = ""
+    this.lastName = ""
+    this.email = ""
   }
 
-  switchFormulaire() {
-    this.displayForm = !this.displayForm
+  switchFormulaire(isForm : boolean) {
+    this.displayForm = isForm
   }
 
 }
