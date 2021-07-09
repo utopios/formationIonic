@@ -11,11 +11,8 @@ import { ComposantAComponent } from './composant-a/composant-a.component';
 import { ComposantBComponent } from './composant-b/composant-b.component';
 import { ComposantCComponent } from './composant-c/composant-c.component';
 import { DemoModule } from './demo/demo.module';
-import { FormPersonComponent } from './form-person/form-person.component';
-import { ItemPersonComponent } from './item-person/item-person.component';
-import { ListPersonComponent } from './list-person/list-person.component';
-import { MenuPersonComponent } from './menu-person/menu-person.component';
-import { PersonComponent } from './person/person.component';
+import { PersonModule } from './person/person.module';
+
 import { PersonService } from './services/person.service';
 
 
@@ -23,10 +20,10 @@ import { PersonService } from './services/person.service';
 //params => la configuration du module
 @NgModule({
   //On déclare les composants du modules
-  declarations: [AppComponent, PersonComponent, ComposantAComponent, ComposantBComponent, ComposantCComponent, ListPersonComponent, FormPersonComponent, ItemPersonComponent, MenuPersonComponent],
+  declarations: [AppComponent, ComposantAComponent, ComposantBComponent, ComposantCComponent],
   entryComponents: [],
   //On importe les sous modules
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, FormsModule, DemoModule],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, FormsModule, DemoModule, PersonModule],
   //On indique les services du modules
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, PersonService],
   //Le composant principal du module

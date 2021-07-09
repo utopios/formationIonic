@@ -1,6 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { Person } from '../interfaces/person.interface';
-import { PersonService } from '../services/person.service';
+import { Person } from '../../interfaces/person.interface';
+import { PersonService } from '../../services/person.service';
 
 @Component({
   selector: 'app-form-person',
