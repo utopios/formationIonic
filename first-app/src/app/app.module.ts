@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { ComposantAComponent } from './composant-a/composant-a.component';
 import { ComposantBComponent } from './composant-b/composant-b.component';
 import { ComposantCComponent } from './composant-c/composant-c.component';
+import { DemoModule } from './demo/demo.module';
 import { FormPersonComponent } from './form-person/form-person.component';
 import { ItemPersonComponent } from './item-person/item-person.component';
 import { ListPersonComponent } from './list-person/list-person.component';
@@ -25,7 +26,7 @@ import { PersonService } from './services/person.service';
   declarations: [AppComponent, PersonComponent, ComposantAComponent, ComposantBComponent, ComposantCComponent, ListPersonComponent, FormPersonComponent, ItemPersonComponent, MenuPersonComponent],
   entryComponents: [],
   //On importe les sous modules
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, FormsModule],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, FormsModule, DemoModule],
   //On indique les services du modules
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, PersonService],
   //Le composant principal du module

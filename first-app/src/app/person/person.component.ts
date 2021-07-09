@@ -20,7 +20,7 @@ export class PersonComponent{
   //On injecte un objet de type PersonService dans notre composant
   constructor(private personService:PersonService) { 
     // this.displayForm = false
-    this.listPersons = this.personService.persons
+    //this.listPersons = this.personService.persons
   }
 
   // incrementAge() {
