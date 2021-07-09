@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>S'enregistrer</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <form [formGroup]="userRegister" (ngSubmit)="validRegistration()">
+    <ion-item lines="full">
+      <ion-label position="floating">Email</ion-label>
+      <ion-input type="text" name="email" formControlName="email"></ion-input>
+
+    </ion-item>
+    <ion-item *ngIf="isSubmit && userRegister.controls.email.errors">
+      <ion-label color="danger">Erreur Email</ion-label>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating">Password</ion-label>
+      <ion-input type="password" name="password" formControlName="password"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="isSubmit && userRegister.controls.password.errors">
+      <ion-label color="danger">Erreur Password</ion-label>
+    </ion-item>
+    <ion-row>
+      <ion-col>
+        <ion-button type="submit" color="success" expand="block">s'enregister</ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
+</ion-content>

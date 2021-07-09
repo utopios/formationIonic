@@ -21,4 +21,8 @@ export class LoginService {
         this.isLogged = user != undefined
         return this.isLogged
     }
+
+    addUser(email:string, password:string) {
+        this.users.push({'email':email, 'password': password})
+    }
 }

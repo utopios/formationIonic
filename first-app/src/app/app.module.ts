@@ -17,6 +17,7 @@ import { DetailPersonComponent } from './person/detail-person/detail-person.comp
 import { FormPersonComponent } from './person/form-person/form-person.component';
 import { ListPersonComponent } from './person/list-person/list-person.component';
 import { PersonModule } from './person/person.module';
+import { RegisterComponent } from './register/register.component';
 import { GuardService } from './services/guard.service';
 import { LoginService } from './services/login.service';
 
@@ -30,6 +31,10 @@ const routes:Routes = [
   {
     path : "login",
     component: LoginComponent,
+  },
+  {
+    path : "register",
+    component: RegisterComponent,
   },
   {
     path:"demo",
@@ -46,7 +51,7 @@ const routes:Routes = [
 //params => la configuration du module
 @NgModule({
   //On déclare les composants du modules
-  declarations: [AppComponent, ComposantAComponent, ComposantBComponent, ComposantCComponent, HomeAppComponent, LoginComponent],
+  declarations: [AppComponent, ComposantAComponent, ComposantBComponent, ComposantCComponent, HomeAppComponent, LoginComponent, RegisterComponent],
   entryComponents: [],
   //On importe les sous modules
   imports: [BrowserModule, IonicModule.forRoot(), RouterModule.forRoot(routes), DemoModule, PersonModule, ReactiveFormsModule],
