@@ -5,6 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { DemoBisComponent } from './demo-bis/demo-bis.component';
 import { HomeDemoComponent } from './home-demo/home-demo.component';
 import { IonicModule } from '@ionic/angular';
+import { FormsModule } from '@angular/forms';
 
 //Les routes de notres modules démo
 const routes:Routes = [
@@ -13,6 +14,9 @@ const routes:Routes = [
   },
   {
     path:'bis', component:DemoBisComponent,
+  },
+  {
+    path:'bis/:id/:name', component:DemoBisComponent,
   }
 ]
 
@@ -22,7 +26,8 @@ const routes:Routes = [
     CommonModule,
     //Importe les routes avec routerModule
     RouterModule.forRoot(routes),
-    IonicModule.forRoot()
+    IonicModule.forRoot(),
+    FormsModule
   ],
   exports:[HomeDemoComponent]
 })
