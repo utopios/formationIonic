@@ -8,16 +8,22 @@ import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
 
 //Les routes de notres modules démo
-const routes:Routes = [
+const routes: Routes = [
   {
-    path:'', component:DemoComponent,
-  },
-  {
-    path:'bis', component:DemoBisComponent,
-  },
-  {
-    path:'bis/:id/:name', component:DemoBisComponent,
+    path: 'demo',
+    children: [
+      {
+        path: '', component: DemoComponent,
+      },
+      {
+        path: 'bis', component: DemoBisComponent,
+      },
+      {
+        path: 'bis/:id/:name', component: DemoBisComponent,
+      }
+    ]
   }
+
 ]
 
 @NgModule({
@@ -25,10 +31,10 @@ const routes:Routes = [
   imports: [
     CommonModule,
     //Importe les routes avec routerModule
-    RouterModule.forRoot(routes),
+    RouterModule.forChild(routes),
     IonicModule.forRoot(),
     FormsModule
   ],
-  exports:[HomeDemoComponent]
+  exports: [HomeDemoComponent]
 })
 export class DemoModule { }
