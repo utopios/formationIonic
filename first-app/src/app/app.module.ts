@@ -12,6 +12,7 @@ import { ComposantBComponent } from './composant-b/composant-b.component';
 import { ComposantCComponent } from './composant-c/composant-c.component';
 import { DemoModule } from './demo/demo.module';
 import { HomeAppComponent } from './home-app/home-app.component';
+import { LoginComponent } from './login/login.component';
 import { DetailPersonComponent } from './person/detail-person/detail-person.component';
 import { FormPersonComponent } from './person/form-person/form-person.component';
 import { ListPersonComponent } from './person/list-person/list-person.component';
@@ -25,12 +26,13 @@ const routes:Routes = [
   {
     path : "",
     component: HomeAppComponent,
-    pathMatch: 'full'
+  },
+  {
+    path : "login",
+    component: LoginComponent,
   },
   {
     path:"demo",
-    pathMatch: 'full',
-    
     loadChildren: () => import('./demo/demo.module').then((m) => m.DemoModule)
   },
   {
@@ -44,12 +46,12 @@ const routes:Routes = [
 //params => la configuration du module
 @NgModule({
   //On déclare les composants du modules
-  declarations: [AppComponent, ComposantAComponent, ComposantBComponent, ComposantCComponent, HomeAppComponent],
+  declarations: [AppComponent, ComposantAComponent, ComposantBComponent, ComposantCComponent, HomeAppComponent, LoginComponent],
   entryComponents: [],
   //On importe les sous modules
   imports: [BrowserModule, IonicModule.forRoot(), RouterModule.forRoot(routes), DemoModule, FormsModule, PersonModule],
   //On indique les services du modules
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, PersonService, LoginService, GuardService],
+  providers: [ PersonService, LoginService, GuardService],
   //Le composant principal du module
   bootstrap: [AppComponent],
 })

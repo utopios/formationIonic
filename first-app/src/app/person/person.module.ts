@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 import { DetailPersonComponent } from './detail-person/detail-person.component';
+import { GuardService } from '../services/guard.service';
 
 const routes: Routes = [
   {
@@ -22,7 +23,8 @@ const routes: Routes = [
         path: 'list', component: ListPersonComponent
       },
       {
-        path: 'form', component: FormPersonComponent
+        path: 'form', component: FormPersonComponent,
+        canActivate:[GuardService]
       },
       {
         path: 'detail/:id', component: DetailPersonComponent

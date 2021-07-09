@@ -9,11 +9,30 @@ import { FormsModule } from '@angular/forms';
 import { GuardService } from '../services/guard.service';
 
 //Les routes de notres modules démo
-const routes: Routes = [
+// const routes: Routes = [
+//   {
+//     path: 'demo',
+//     canActivate: [GuardService],
+//     children: [
+//       {
+//         path: '', component: DemoComponent,
+
+//       },
+//       {
+//         path: 'bis', component: DemoBisComponent,
+
+//       },
+//       {
+//         path: 'bis/:id/:name', component: DemoBisComponent,
+//       }
+//     ]
+//   }
+// ]
+
+const routes : Routes = [
   {
-    path: 'demo',
-    canActivate:[GuardService],
-    children: [
+    path : "demo",
+    children : [
       {
         path: '', component: DemoComponent,
         
@@ -24,12 +43,11 @@ const routes: Routes = [
       },
       {
         path: 'bis/:id/:name', component: DemoBisComponent,
-        
+        canActivate:[GuardService]
       }
-      
     ]
   }
-
+  
 ]
 
 @NgModule({
