@@ -33,7 +33,14 @@
  
 </ng-template> -->
 
-<app-menu-person (eventMenuChange)="changeMenu($event)"></app-menu-person>
-<app-form-person *ngIf="menu == 'form'" (validPerson)="addPerson($event)"></app-form-person>
+<!-- <app-menu-person (eventMenuChange)="changeMenu($event)"></app-menu-person>
+<app-form-person *ngIf="menu == 'form'" (validPerson)="addPerson($event)"></app-form-person> -->
 <!-- <app-list-person *ngIf="menu == 'liste'" [listPersons]="listPersons"></app-list-person> -->
-<app-list-person *ngIf="menu == 'liste'" ></app-list-person>
+<!-- <app-list-person *ngIf="menu == 'liste'" ></app-list-person> -->
+<ion-header>
+  <app-menu-person></app-menu-person>
+</ion-header>
+<ion-content>
+  <!-- Emplacement du chargement des composants en fonction de l'url -->
+  <ion-router-outlet></ion-router-outlet>
+</ion-content>
