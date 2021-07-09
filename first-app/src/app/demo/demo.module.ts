@@ -6,6 +6,7 @@ import { DemoBisComponent } from './demo-bis/demo-bis.component';
 import { HomeDemoComponent } from './home-demo/home-demo.component';
 import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
+import { GuardService } from '../services/guard.service';
 
 //Les routes de notres modules démo
 const routes: Routes = [
@@ -14,13 +15,17 @@ const routes: Routes = [
     children: [
       {
         path: '', component: DemoComponent,
+        
       },
       {
         path: 'bis', component: DemoBisComponent,
+        canActivate:[GuardService]
       },
       {
         path: 'bis/:id/:name', component: DemoBisComponent,
+        canActivate:[GuardService]
       }
+      
     ]
   }
 

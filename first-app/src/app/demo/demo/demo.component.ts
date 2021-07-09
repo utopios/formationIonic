@@ -18,7 +18,7 @@ export class DemoComponent implements OnInit {
     //logique métier
 
     //La redirection vers demo-bis
-    this.router.navigate([`/bis/${this.paramsId}/${this.paramsName}`])
+    this.router.navigate([`/demo/bis/${this.paramsId}/${this.paramsName}`])
   }
 
 }
