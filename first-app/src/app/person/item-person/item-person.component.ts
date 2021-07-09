@@ -8,6 +8,7 @@ import { Person } from 'src/app/interfaces/person.interface';
   styleUrls: ['./item-person.component.scss'],
 })
 export class ItemPersonComponent implements OnInit {
+  @Input() monIndex:number
   @Input() person:Person
   constructor() { }
 
