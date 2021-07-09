@@ -1,4 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Router } from '@angular/router';
 import { Person } from '../../interfaces/person.interface';
 import { PersonService } from '../../services/person.service';
 
@@ -12,7 +13,7 @@ export class FormPersonComponent implements OnInit {
   lastName:String
   email:String
   @Output() validPerson:EventEmitter<Person> = new EventEmitter()
-  constructor(private personService:PersonService) { }
+  constructor(private personService:PersonService, private router:Router) { }
 
   ngOnInit() {}
 
@@ -20,5 +21,7 @@ export class FormPersonComponent implements OnInit {
     const person:Person = {firstName:this.firstName, lastName:this.lastName, email:this.email}
     //this.validPerson.emit(person)
     this.personService.addPerson(person)
+
+    this.router.navigate(['/'])
   }
 }

@@ -8,4 +8,8 @@ export class PersonService {
     addPerson(person:Person) {
         this.persons.push(person)
     }
+
+    getPersonById(id:number):Person {
+        return this.persons[id]
+    }
 }

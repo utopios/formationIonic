@@ -8,4 +8,8 @@
   <ion-col>
     {{person.email}}
   </ion-col>
+  <ion-col>
+    <!-- <a [routerLink]="['/detail/'indexPerson]">Detail</a> -->
+    <a routerLink="/detail/{{indexPerson}}">Detail</a>
+  </ion-col>
 </ion-row>

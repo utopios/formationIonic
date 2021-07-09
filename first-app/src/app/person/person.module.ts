@@ -8,14 +8,16 @@ import { ItemPersonComponent } from './item-person/item-person.component';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
+import { DetailPersonComponent } from './detail-person/detail-person.component';
 
 const routes:Routes = [
   {path:'', component: ListPersonComponent},
-  {path :'form', component: FormPersonComponent}
+  {path :'form', component: FormPersonComponent},
+  {path :'detail/:id', component: DetailPersonComponent},
 ] 
 
 @NgModule({
-  declarations: [PersonComponent, ListPersonComponent, FormPersonComponent, MenuPersonComponent, ItemPersonComponent],
+  declarations: [PersonComponent, ListPersonComponent, FormPersonComponent, MenuPersonComponent, ItemPersonComponent, DetailPersonComponent],
   imports: [
     CommonModule,
     FormsModule,
