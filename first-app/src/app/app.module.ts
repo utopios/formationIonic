@@ -30,7 +30,13 @@ const routes:Routes = [
   {
     path:"demo",
     pathMatch: 'full',
+    
     loadChildren: () => import('./demo/demo.module').then((m) => m.DemoModule)
+  },
+  {
+    path:"person",
+    pathMatch: 'full',
+    loadChildren: () => import('./person/person.module').then((m) => m.PersonModule)
   }
 ]
 

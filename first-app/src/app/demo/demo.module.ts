@@ -12,6 +12,7 @@ import { GuardService } from '../services/guard.service';
 const routes: Routes = [
   {
     path: 'demo',
+    canActivate:[GuardService],
     children: [
       {
         path: '', component: DemoComponent,
@@ -19,11 +20,11 @@ const routes: Routes = [
       },
       {
         path: 'bis', component: DemoBisComponent,
-        canActivate:[GuardService]
+       
       },
       {
         path: 'bis/:id/:name', component: DemoBisComponent,
-        canActivate:[GuardService]
+        
       }
       
     ]
