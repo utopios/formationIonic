@@ -23,7 +23,7 @@ import { PersonService } from './services/person.service';
   declarations: [AppComponent, ComposantAComponent, ComposantBComponent, ComposantCComponent],
   entryComponents: [],
   //On importe les sous modules
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, FormsModule, DemoModule, PersonModule],
+  imports: [BrowserModule, IonicModule.forRoot(), FormsModule, DemoModule, PersonModule],
   //On indique les services du modules
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, PersonService],
   //Le composant principal du module
