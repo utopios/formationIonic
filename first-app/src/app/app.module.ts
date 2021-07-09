@@ -39,7 +39,7 @@ const routes:Routes = [
   declarations: [AppComponent, ComposantAComponent, ComposantBComponent, ComposantCComponent, HomeAppComponent],
   entryComponents: [],
   //On importe les sous modules
-  imports: [BrowserModule, IonicModule.forRoot(), RouterModule.forRoot(routes), DemoModule, FormsModule],
+  imports: [BrowserModule, IonicModule.forRoot(), RouterModule.forRoot(routes), DemoModule, FormsModule, PersonModule],
   //On indique les services du modules
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, PersonService],
   //Le composant principal du module

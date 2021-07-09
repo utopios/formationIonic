@@ -10,15 +10,24 @@ import { RouterModule, Routes } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 import { DetailPersonComponent } from './detail-person/detail-person.component';
 
-const routes:Routes = [
+const routes: Routes = [
   {
-    path : '', component : ListPersonComponent
-  },
-  {
-    path : 'form', component : FormPersonComponent
-  },
-  {
-    path : 'detail/:id', component : DetailPersonComponent
+    path: 'person',
+    component: PersonComponent,
+    children: [
+      // {
+      //   path: '', component: PersonComponent
+      // },
+      {
+        path: 'list', component: ListPersonComponent
+      },
+      {
+        path: 'form', component: FormPersonComponent
+      },
+      {
+        path: 'detail/:id', component: DetailPersonComponent
+      }
+    ]
   }
 ]
 @NgModule({
@@ -29,6 +38,6 @@ const routes:Routes = [
     RouterModule.forChild(routes),
     IonicModule.forRoot()
   ],
-  exports:[PersonComponent]
+  exports: [PersonComponent]
 })
 export class PersonModule { }
