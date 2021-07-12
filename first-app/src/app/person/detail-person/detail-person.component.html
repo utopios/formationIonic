@@ -1,4 +1,4 @@
-<div>
+<div *ngIf="person != undefined else notPerson">
   <div>
     Id : {{index}}
   </div>
@@ -12,3 +12,8 @@
     Email : {{person.email}}
   </div>
 </div>
+<ng-template #notPerson>
+  <div>
+    Chargement en cours...
+  </div>
+</ng-template>

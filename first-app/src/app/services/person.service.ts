@@ -21,7 +21,12 @@ export class PersonService {
         //return this.persons
     }
 
-    getPersonById(id:number):Person {
-        return this.persons[id]
+    //Récupèrer la personne par son id à l'aide d'une promise
+    getPersonById(id:number):Promise<Person> {
+        return new Promise((resolve, reject)=> {
+            setTimeout(()=> {
+                resolve(this.persons[id])
+            },3000)
+        })    
     }
 }

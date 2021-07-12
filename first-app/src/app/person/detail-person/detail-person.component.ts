@@ -14,7 +14,9 @@ export class DetailPersonComponent implements OnInit {
   constructor(private personService:PersonService, private activatedRoute:ActivatedRoute) { 
     this.index = this.activatedRoute.snapshot.params.id
     if(this.index != undefined) {
-      this.person = this.personService.getPersonById(this.index)
+      this.personService.getPersonById(this.index).then((res:Person)=> {
+        this.person = res
+      })
     }
   }
 
