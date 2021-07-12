@@ -13,6 +13,7 @@ import { PersonService } from 'src/app/services/person.service';
 })
 export class ListPersonComponent implements OnInit {
   @Input() listPersons:Array<Person>
+  refObservable:any
   constructor(private personService:PersonService, private apiService:ApiTestService, private httpClient:HttpClient) { 
     console.log("en cours de chargment....")
     // this.personService.getPersons().then((result:Array<Person>) => {
@@ -35,13 +36,14 @@ export class ListPersonComponent implements OnInit {
   }
   ionViewDidEnter() {
     console.log("view did enter")
-    this.httpClient.get('http://localhost:3000/persons').subscribe((res:Array<Person>) => {
+    this.refObservable = this.httpClient.get('http://localhost:3000/persons').subscribe((res:Array<Person>) => {
       this.listPersons = res
     })
   }
 
   ionViewWillLeave() {
     console.log("View will leave")
+    this.refObservable.unsubscribe()
   }
   ionViewDidLeave() {
     console.log("View did leave")
