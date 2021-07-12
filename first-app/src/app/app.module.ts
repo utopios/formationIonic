@@ -56,7 +56,7 @@ const routes:Routes = [
   //On importe les sous modules
   imports: [BrowserModule, IonicModule.forRoot(), RouterModule.forRoot(routes), DemoModule, PersonModule, ReactiveFormsModule, HttpClientModule],
   //On indique les services du modules
-  providers: [ PersonService, LoginService, GuardService, ApiService],
+  providers: [ ApiService,PersonService, LoginService, GuardService],
   //Le composant principal du module
   bootstrap: [AppComponent],
 })

@@ -3,10 +3,11 @@ const express = require('express')
 const app = express()
 const cors = require('cors')
 const persons = [{firstName : 'tata', lastName:'toto', email:'toto@tata'}]
-
+const jsonParser = require('body-parser')
 app.use(cors({
     origin : "*"
 }))
+app.use(jsonParser.json())
 app.get('/', (req, res) => {
     console.log("ok")
     setTimeout(()=>{
@@ -32,6 +33,12 @@ app.get('/person/:id',(req, res)=> {
     },2000)
 })
 
+app.post('/person',(req, res)=> {
+    persons.push({...req.body})
+    setTimeout(()=>{
+        res.json({message:'Personne ajoutée'})
+    },2000)
+})
 
 app.listen('3000', ()=> {
     console.log("API IS OK")
