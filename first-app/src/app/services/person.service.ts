@@ -9,6 +9,18 @@ export class PersonService {
         this.persons.push(person)
     }
 
+    getPersons() {
+        //Tâche qui prend beaucoup de temps à être exécuter
+        //promise
+        return new Promise((resolve, reject)=> {
+            //Tâche qui prend du temps sera exécuter à l'intétieur de la promise
+            setTimeout(()=> {
+                resolve(this.persons)
+            },3000)    
+        })
+        //return this.persons
+    }
+
     getPersonById(id:number):Person {
         return this.persons[id]
     }

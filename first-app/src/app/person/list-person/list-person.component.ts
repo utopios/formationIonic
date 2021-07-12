@@ -11,7 +11,12 @@ import { PersonService } from 'src/app/services/person.service';
 export class ListPersonComponent implements OnInit {
   @Input() listPersons:Array<Person>
   constructor(private personService:PersonService) { 
-    this.listPersons = this.personService.persons
+    console.log("en cours de chargment....")
+    this.personService.getPersons().then((result:Array<Person>) => {
+      this.listPersons = result
+    })
+    console.log("l'application continue")
+    //this.listPersons = this.personService.getPersons()
   }
 
   ngOnInit() {}
