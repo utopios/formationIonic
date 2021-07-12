@@ -13,21 +13,37 @@ import { PersonService } from 'src/app/services/person.service';
 })
 export class ListPersonComponent implements OnInit {
   @Input() listPersons:Array<Person>
-  constructor(private personService:PersonService, private apiService:ApiTestService) { 
+  constructor(private personService:PersonService, private apiService:ApiTestService, private httpClient:HttpClient) { 
     console.log("en cours de chargment....")
     // this.personService.getPersons().then((result:Array<Person>) => {
     //   this.listPersons = result
     // })
-    // this.httpClient.get('http://localhost:3000/persons').subscribe((res:Array<Person>) => {
+    
+    // this.apiService.getPersons().subscribe((res:Array<Person>)=> {
     //   this.listPersons = res
     // })
-    this.apiService.getPersons().subscribe((res:Array<Person>)=> {
-      this.listPersons = res
-    })
     console.log("l'application continue")
     //this.listPersons = this.personService.getPersons()
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    console.log("component is init")
+    
+  }
+  ionViewWillEnter(){
+    console.log("view will enter")
+  }
+  ionViewDidEnter() {
+    console.log("view did enter")
+    this.httpClient.get('http://localhost:3000/persons').subscribe((res:Array<Person>) => {
+      this.listPersons = res
+    })
+  }
 
+  ionViewWillLeave() {
+    console.log("View will leave")
+  }
+  ionViewDidLeave() {
+    console.log("View did leave")
+  }
 }

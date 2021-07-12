@@ -20,9 +20,9 @@ export class DetailPersonComponent implements OnInit {
       // }).catch(err => {
       //   console.log(err)
       // })
-      this.apiService.getPersonById(this.index).subscribe((res:Person)=> {
-        this.person = res
-      })
+      // this.apiService.getPersonById(this.index).subscribe((res:Person)=> {
+      //   this.person = res
+      // })
     }
   }
 

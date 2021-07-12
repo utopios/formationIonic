@@ -22,11 +22,11 @@ export class FormPersonComponent implements OnInit {
     const person:Person = {firstName:this.firstName, lastName:this.lastName, email:this.email}
     //this.validPerson.emit(person)
     //this.personService.addPerson(person)
-    this.apiService.postPerson(person).subscribe((res:any)=> {
-      if(!res.error)
-        this.router.navigate(['/'])
-      else 
-        alert("Erreur ajout personne")
-    })
+    // this.apiService.postPerson(person).subscribe((res:any)=> {
+    //   if(!res.error)
+    //     this.router.navigate(['/'])
+    //   else 
+    //     alert("Erreur ajout personne")
+    // })
   }
 }
