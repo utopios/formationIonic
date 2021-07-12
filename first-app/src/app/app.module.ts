@@ -21,6 +21,7 @@ import { GuardService } from './services/guard.service';
 import { LoginService } from './services/login.service';
 
 import { PersonService } from './services/person.service';
+import { ApiService } from './services/api.service';
 
 const routes:Routes = [
   {
@@ -55,7 +56,7 @@ const routes:Routes = [
   //On importe les sous modules
   imports: [BrowserModule, IonicModule.forRoot(), RouterModule.forRoot(routes), DemoModule, PersonModule, ReactiveFormsModule, HttpClientModule],
   //On indique les services du modules
-  providers: [ PersonService, LoginService, GuardService],
+  providers: [ PersonService, LoginService, GuardService, ApiService],
   //Le composant principal du module
   bootstrap: [AppComponent],
 })

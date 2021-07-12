@@ -10,6 +10,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 import { DetailPersonComponent } from './detail-person/detail-person.component';
 import { GuardService } from '../services/guard.service';
+import { ApiService } from '../services/api.service';
+import { HttpClientModule } from '@angular/common/http';
 
 const routes: Routes = [
   {
@@ -38,8 +40,9 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     RouterModule.forChild(routes),
-    IonicModule.forRoot()
+    IonicModule.forRoot(),
+    HttpClientModule
   ],
-  exports: [PersonComponent]
+  exports: [PersonComponent],
 })
 export class PersonModule { }

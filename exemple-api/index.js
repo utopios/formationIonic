@@ -26,6 +26,12 @@ app.get('/persons',(req, res)=> {
     },2000)
 })
 
+app.get('/person/:id',(req, res)=> {
+    setTimeout(()=>{
+        res.json(persons[req.params.id])
+    },2000)
+})
+
 
 app.listen('3000', ()=> {
     console.log("API IS OK")
