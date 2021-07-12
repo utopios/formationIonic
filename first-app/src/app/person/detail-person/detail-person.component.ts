@@ -16,6 +16,8 @@ export class DetailPersonComponent implements OnInit {
     if(this.index != undefined) {
       this.personService.getPersonById(this.index).then((res:Person)=> {
         this.person = res
+      }).catch(err => {
+        console.log(err)
       })
     }
   }

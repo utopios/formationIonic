@@ -4,7 +4,7 @@ import { Person } from "../interfaces/person.interface";
 @Injectable()
 export class PersonService {
     persons:Array<Person> = [{firstName : 'tata', lastName:'toto', email:'toto@tata'}]
-
+    echec:boolean = true
     addPerson(person:Person) {
         this.persons.push(person)
     }
@@ -25,7 +25,13 @@ export class PersonService {
     getPersonById(id:number):Promise<Person> {
         return new Promise((resolve, reject)=> {
             setTimeout(()=> {
-                resolve(this.persons[id])
+                if(this.echec) {
+                    reject("erreur de connexion")
+                }
+                else {
+                    resolve(this.persons[id])
+                }
+                this.echec = !this.echec
             },3000)
         })    
     }
