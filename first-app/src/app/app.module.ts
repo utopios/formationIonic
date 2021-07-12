@@ -2,9 +2,8 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy, RouterModule, Routes } from '@angular/router';
-
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
-
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ComposantAComponent } from './composant-a/composant-a.component';
@@ -54,7 +53,7 @@ const routes:Routes = [
   declarations: [AppComponent, ComposantAComponent, ComposantBComponent, ComposantCComponent, HomeAppComponent, LoginComponent, RegisterComponent],
   entryComponents: [],
   //On importe les sous modules
-  imports: [BrowserModule, IonicModule.forRoot(), RouterModule.forRoot(routes), DemoModule, PersonModule, ReactiveFormsModule],
+  imports: [BrowserModule, IonicModule.forRoot(), RouterModule.forRoot(routes), DemoModule, PersonModule, ReactiveFormsModule, HttpClientModule],
   //On indique les services du modules
   providers: [ PersonService, LoginService, GuardService],
   //Le composant principal du module
