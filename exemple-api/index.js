@@ -36,7 +36,7 @@ app.get('/person/:id',(req, res)=> {
 app.post('/person',(req, res)=> {
     persons.push({...req.body})
     setTimeout(()=>{
-        res.json({message:'Personne ajoutée'})
+        res.json({message:'Personne ajoutée', error:false})
     },2000)
 })
 
