@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Person } from 'src/app/interfaces/person.interface';
 import { ApiTestService } from 'src/app/services/api.service';
 
@@ -14,7 +15,7 @@ import { PersonService } from 'src/app/services/person.service';
 export class ListPersonComponent implements OnInit {
   @Input() listPersons:Array<Person>
   refObservable:any
-  constructor(private personService:PersonService, private apiService:ApiTestService, private httpClient:HttpClient) { 
+  constructor(private personService:PersonService, private apiService:ApiTestService, private httpClient:HttpClient, private router:Router) { 
     console.log("en cours de chargment....")
     // this.personService.getPersons().then((result:Array<Person>) => {
     //   this.listPersons = result
@@ -47,5 +48,9 @@ export class ListPersonComponent implements OnInit {
   }
   ionViewDidLeave() {
     console.log("View did leave")
+  }
+
+  goToForm() {
+    this.router.navigate(['/person/form'])
   }
 }
